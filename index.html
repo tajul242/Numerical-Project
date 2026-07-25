@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curve Fitting Solver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Curve Fitting Solver</h1>
+            <p>Linear, Polynomial, Exponential & Logarithmic Regression</p>
+        </div>
+
+        <div class="card">
+            <label>📋 Data Points (x, y)</label>
+            <textarea id="dataInput" rows="4">1, 2
+2, 3.5
+3, 6
+4, 8.5
+5, 11</textarea>
+            <p class="hint">Format: x, y (comma separated)</p>
+        </div>
+
+        <div class="card">
+            <label>🔧 Select Method</label>
+            <div class="method-grid">
+                <button onclick="setMethod('linear')" id="btn-linear" class="method-btn active">📈 Linear</button>
+                <button onclick="setMethod('polynomial')" id="btn-polynomial" class="method-btn">📉 Polynomial</button>
+                <button onclick="setMethod('exponential')" id="btn-exponential" class="method-btn">⚡ Exponential</button>
+                <button onclick="setMethod('logarithmic')" id="btn-logarithmic" class="method-btn">🌿 Logarithmic</button>
+            </div>
+            <div id="degreeBox" style="display:none; margin-top:10px;">
+                <label>Degree: <input type="number" id="polyDegree" value="2" min="2" max="10"></label>
+            </div>
+        </div>
+
+        <button onclick="solve()" class="solve-btn">🚀 Solve</button>
+        <div id="loading" style="display:none; text-align:center; color:#3b82f6;">⏳ Calculating...</div>
+
+        <div id="results" style="display:none;">
+            <div class="card">
+                <h3>📐 Fitted Equation</h3>
+                <div id="equation" class="equation-box"></div>
+            </div>
+
+            <div class="card">
+                <h3>📊 Steps</h3>
+                <div id="steps"></div>
+            </div>
+
+            <div class="predict-card">
+                <h3>🔮 Predict Y for any X</h3>
+                <div class="predict-row">
+                    <label>x = <input type="text" id="predictX" placeholder="25"></label>
+                    <button onclick="predictY()" class="predict-btn">Calculate Y</button>
+                </div>
+                <div id="predictResult" style="display:none;">
+                    <div class="predict-result-box">
+                        <div id="predictValue"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>📈 Graph</h3>
+                <canvas id="graphCanvas" width="800" height="350"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #f8fafc; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+
+.header {
+    background: linear-gradient(135deg, #1e3a5f, #2d5a87);
+    color: white; padding: 28px; border-radius: 16px;
+    margin-bottom: 24px; box-shadow: 0 8px 32px rgba(30,58,95,0.25);
+}
+.header h1 { margin: 0 0 8px; font-size: 28px; }
+.header p { margin: 0; opacity: 0.9; }
+
+.card {
+    background: white; border-radius: 14px; padding: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 20px;
+}
+.card label { display: block; font-weight: 600; color: #334155; margin-bottom: 8px; }
+
+textarea {
+    width: 100%; padding: 14px; border: 2px solid #e2e8f0;
+    border-radius: 10px; font-family: 'Consolas', monospace; font-size: 14px;
+}
+.hint { margin: 6px 0 0; font-size: 12px; color: #64748b; }
+
+.method-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+.method-btn {
+    flex: 1; min-width: 160px; padding: 14px;
+    border: 2px solid #e2e8f0; border-radius: 10px;
+    background: white; color: #475569; font-weight: 600;
+    cursor: pointer; font-size: 14px; transition: all 0.2s;
+}
+.method-btn.active { background: #3b82f6; color: white; border-color: #3b82f6; }
+
+.solve-btn {
+    width: 100%; padding: 16px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white; border: none; border-radius: 12px;
+    font-size: 17px; font-weight: 700; cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.equation-box {
+    background: #f1f5f9; padding: 16px; border-radius: 10px;
+    font-family: 'Times New Roman', serif; font-size: 20px;
+    text-align: center; border-left: 4px solid #3b82f6;
+}
+
+.predict-card {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-radius: 14px; padding: 24px;
+    margin-bottom: 20px; border: 2px solid #f59e0b;
+}
+.predict-row { display: flex; align-items: center; gap: 16px; }
+.predict-row input {
+    width: 140px; padding: 10px; border: 2px solid #f59e0b;
+    border-radius: 10px; font-size: 16px;
+}
+.predict-btn {
+    padding: 10px 24px; background: #f59e0b; color: white;
+    border: none; border-radius: 10px; font-weight: 700; cursor: pointer;
+}
+.predict-result-box {
+    background: white; padding: 16px; border-radius: 10px;
+    margin-top: 16px; text-align: center;
+    font-size: 26px; color: #78350f; font-weight: 700;
+}
+
+canvas { width: 100%; background: #fafafa; border-radius: 10px; }
